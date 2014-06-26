@@ -44,7 +44,7 @@ object HttpClientExample {
 
     implicit def catcher: Catcher[Unit] = {
       case e: Exception => {
-        println(s"Error when downloading http://ww.qifun.com/:\n${e.getMessage}")
+        println(s"Error when downloading http://www.qifun.com/:\n${e.getMessage}")
       }
     }
 
