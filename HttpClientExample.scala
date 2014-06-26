@@ -31,7 +31,7 @@ object HttpClientExample {
       val socket = AsynchronousSocketChannel.open()
       try {
         Nio2Future.connect(socket, new InetSocketAddress("www.qifun.com", 80)).await
-        val request = ByteBuffer.wrap("GET / HTTP/1.1\r\nHost:www.qifun.com\r\nConnection:Close\r\n\r\n".getBytes)
+        val request = ByteBuffer.wrap("GET / HTTP/1.1\r\nHost:www.qifun.com\r\nConnection:close\r\n\r\n".getBytes)
         writeAll(socket, request).await
         val response = ByteBuffer.allocate(100000)
         readAll(socket, response).await
